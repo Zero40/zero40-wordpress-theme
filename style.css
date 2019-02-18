@@ -1,0 +1,92 @@
+/*
+ Theme Name:   Zero40
+ Theme URI:    https://gitlab.com/app-masters/zero40-wordpress
+ Description:  Zero 40 Theme
+ Author:       Tiago Gouvêa
+ Author URI:   https://gitlab.com/TiagoGouvea
+ Template:     integral
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  zero40-theme
+*/
+
+input[type="text"], input[type="url"],input[type="email"] {
+    width: 100%;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+input[type="radio"] {
+    width: inherit;
+}
+
+label {
+    /*font-size: 1.4em;*/
+    font-weight: bolder;
+    margin-top: 1em;
+    display: block !important;
+    position: relative !important;
+}
+
+select {
+    height: 2em;
+    width: 100%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.error {
+    color: lightcoral;
+    display: block;
+    margin: .5em;
+}
+
+.success {
+    color: green;
+    text-align: center;
+}
+
+.required {
+    color: lightcoral;
+}
+
+.home-blog-entry-text h3 > a {
+    font-size: 1.6rem !important;
+    letter-spacing: 0.25px;
+}
+
+/****** sidebar *******/
+
+.sidebar .textwidget {
+    color: #666;
+    font-size: 14px !important;
+}
+
+.checkbox_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.inline_checkbox {
+    margin: 3px;
+    display: flex;
+}
+
+.inline_checkbox .checkbox {
+    text-align: left;
+    margin-top: 2px !important;
+}
+
+.inline_checkbox span {
+    margin-left: 1em;
+    font-size: 12px;
+}
