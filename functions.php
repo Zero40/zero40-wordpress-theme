@@ -1,8 +1,30 @@
 <?php
+// Exit if accessed directly
+if ( !defined( 'ABSPATH' ) ) exit;
 
-add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('hashone-parent-style', get_template_directory_uri() . '/style.css');
-});
+// BEGIN ENQUEUE PARENT ACTION
+if ( !function_exists( 'zero_cfg_locale_css' ) ):
+    function zero_cfg_locale_css( $uri ){
+        if ( empty( $uri ) && is_rtl() && file_exists( get_template_directory() . '/rtl.css' ) )
+            $uri = get_template_directory_uri() . '/rtl.css';
+        return $uri;
+    }
+endif;
+add_filter( 'locale_stylesheet_uri', 'zero_cfg_locale_css' );
+
+if ( !function_exists( 'zero_cfg_parent_css' ) ):
+    function zero_cfg_parent_css() {
+        wp_enqueue_style( 'zero_cfg_parent', trailingslashit( get_template_directory_uri() ) . 'style.css', array( 'integral_bootstrap_css','integral_multicolumnsrow_css','integral_flexslider_css','integral_prettyphoto_css' ) );
+    }
+endif;
+add_action( 'wp_enqueue_scripts', 'zero_cfg_parent_css', 10 );
+
+// END ENQUEUE PARENT ACTION
+
+
+//add_action('wp_enqueue_scripts', function () {
+//    wp_enqueue_style('hashone-parent-style', get_template_directory_uri() . '/style.css');
+//});
 
 
 // Shortcode to show and handle new events form

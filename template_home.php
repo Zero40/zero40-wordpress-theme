@@ -15,24 +15,18 @@ Template Name: Zero40 Home
 // var_dump($layout);
 // die();
 
-?>
-
-<?php get_header(); ?>
-
-<?php
+get_header();
 
 $layout = $integral['gen-home-layout']['Enabled'];
 
-if ($layout) {
-    $layout=[];
-    $layout['events'] = "Eventos";
-    // var_dump($layout);
-    foreach ($layout as $key => $value) {
-        get_template_part('sections/' . $key);
 
-    }
+if ( $layout ) {
+	foreach ( $layout as $key => $value ) {
+		get_template_part( 'sections/' . $key );
+		if ( 'hero' === $key ) {
+			get_template_part( 'sections/events' );
+		}
+	}
 }
 
-?>
-
-<?php get_footer(); ?>
+get_footer();
