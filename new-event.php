@@ -1,12 +1,16 @@
 <?php
+/**
+ * Template Name: Test form
+ */
 // Whats the right approach?
-$organizers = EventsManager::getActiveOrganizer();
+//$organizers = EventsManager::getActiveOrganizer();
 
-$places = getPlaces();
-$categories = getCategories();
-$types = getTypes();
-$tags = getTagsTitles();
-$response = getResponse();
+//$places = getPlaces();
+//$categories = getCategories();
+//$types = getTypes();
+//$tags = getTagsTitles();
+//$response = getResponse();
+get_header()
 ?>
 
     <div class='row'>
@@ -282,9 +286,10 @@ $response = getResponse();
     </script>
 
 <?php
+get_footer();
 function showErrorInput($field)
 {
-    $response = getResponse();
+    $response = [];//getResponse();
     if (isset($response[$field])) {
         ?><span class='error'><?= $response[$field] ?></span><?php
     }

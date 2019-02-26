@@ -11,13 +11,26 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  zero40
 */
-
-input[type="text"], input[type="url"],input[type="email"] {
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="color"],
+textarea {
     width: 100%;
+    max-width: 100%;
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
     border-radius: 4px;
+    line-height: 22px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     padding: 6px 12px;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
@@ -89,4 +102,15 @@ select {
 .inline_checkbox span {
     margin-left: 1em;
     font-size: 12px;
+}
+
+.em-input-list {
+    list-style: none;
+    padding: 0;
+}
+
+
+.events-masters input + label,
+.em-input-list label {
+    display: inline-block !important;
 }

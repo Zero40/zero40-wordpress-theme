@@ -54,6 +54,10 @@ get_header(); ?>
                                     Endereço: <?= EM::get_the_place()->_address ?>
 								<?php endif ?>
 
+                                <div class="col-md-12 text-center">
+                                    <a href="<?php echo EM::get_the_checkout_url() ?>" class="btn btn-danger btn-lg btn-primary">Registrar</a>
+                                </div>
+
                             </div>
 
                             <div class="clearfix"></div>
