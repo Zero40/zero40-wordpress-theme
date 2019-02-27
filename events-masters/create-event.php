@@ -21,6 +21,7 @@ $types      = get_terms( array( 'taxonomy' => 'event_type', 'hide_empty' => fals
 $places     = get_posts( 'post_type=place&numberposts=-1' );
 
 wp_enqueue_script( 'vue-tags-input' );
+wp_enqueue_style( 'vue-tags-input' );
 /* @var $tags WP_Term[] */
 $tags        = get_terms( array( 'taxonomy' => 'event_tag', 'hide_empty' => false ) );
 $tags_titles = array();

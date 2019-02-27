@@ -47,22 +47,21 @@ get_header(); ?>
 
                                 <div><?php the_content() ?></div>
 
-                                <p><a href="<?= get_post()->_external_link ?>">Website do evento</a></p>
-
-								<?php if ( get_post()->_local == "PRESENTIAL" ) : ?>
-                                    Local: <?= get_the_title( EM::get_the_place() ) ?><br>
-                                    Endereço: <?= EM::get_the_place()->_address ?>
+								<?php if ( get_post()->_local == "PRESENTIAL" && EM::get_the_place() ) : ?>
+                                    <address class="event-place">
+                                        Local: <?= get_the_title( EM::get_the_place() ) ?><br>
+                                        Endereço: <?= EM::get_the_place()->_address ?>
+                                    </address>
 								<?php endif ?>
 
                                 <div class="col-md-12 text-center">
-                                    <a href="<?php echo EM::get_the_checkout_url() ?>" class="btn btn-danger btn-lg btn-primary">Registrar</a>
+                                    <a href="<?php echo get_post()->_external_link ?>"
+                                       class="btn btn-danger btn-lg btn-primary">Ver detalhes</a>
                                 </div>
 
                             </div>
 
                             <div class="clearfix"></div>
-
-							<?= do_shortcode( '[addtoany]' ); ?>
 
                         </article> <!--post -->
 
@@ -85,9 +84,9 @@ get_header(); ?>
 										<?= get_the_title( EM::get_the_organizer() ) ?>
                                     </a>
                                 </h4>
-                                Founder @ Themely, entrepreneur and travel addict. Always learning, maverik at heart,
-                                speaks
-                                3 languages and hope's to go to space one day.
+                                <div>
+									<?php echo apply_filters( 'the_content', EM::get_the_organizer()->post_content ) ?>
+                                </div>
                             </div>
                         </aside>
 					<?php endwhile; ?>
