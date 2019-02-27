@@ -54,10 +54,10 @@ get_header(); ?>
                                     </address>
 								<?php endif ?>
 
-                                <div class="col-md-12 text-center">
+                                <p class="col-md-12 text-center">
                                     <a href="<?php echo get_post()->_external_link ?>"
                                        class="btn btn-danger btn-lg btn-primary">Ver detalhes</a>
-                                </div>
+                                </p>
 
                             </div>
 
