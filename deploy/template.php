@@ -9,7 +9,7 @@ return [
 		'user'        => 'zero40@neopangea.com.br',
 		'password'    => '=goxXTEeMebu',
 		'local'       => '../',
-		'test'        => true,
+		'test'        => false,
 		'color'       => true,
 		'ignore'      => '
 			/.git
