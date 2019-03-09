@@ -2,4 +2,5 @@ vendor/
 .idea/
 .env
 .DS_Store
-
+deploy/logs
+deploy/temp
