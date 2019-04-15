@@ -56,15 +56,16 @@ foreach ( $tags as $tag ) {
 
         <fieldset id="create-event-new-organizer" v-if="'new' === event.organizerId">
             <legend><?php _e( "Novo Organizador", "events-masters" ) ?></legend>
+            <div class="em-fieldset-wrapper">
+                <em-input v-model="event.organizer_title" :error="error" name="organizer_title" required
+                          label="<?php _e( "Título do Organizador", "events-masters" ) ?>"
+                ></em-input>
 
-            <em-input v-model="event.organizer_title" :error="error" name="organizer_title" required
-                      label="<?php _e( "Título do Organizador", "events-masters" ) ?>"
-            ></em-input>
-
-            <em-input v-model="event.organizer_email" :error="error" name="organizer_email"
-                      required type="email"
-                      label="<?php _e( "Email do Organizador", "events-masters" ) ?>"
-            ></em-input>
+                <em-input v-model="event.organizer_email" :error="error" name="organizer_email"
+                          required type="email"
+                          label="<?php _e( "Email do Organizador", "events-masters" ) ?>"
+                ></em-input>
+            </div>
         </fieldset>
 
         <em-input :error="error" name="categoryId" required
@@ -101,15 +102,18 @@ foreach ( $tags as $tag ) {
         <fieldset id="create-event-date">
             <legend><?php _e( "Data do Evento", "events-masters" ) ?></legend>
 
-            <em-input v-model="event.starts_at" :error="error" name="starts_at"
-                      required type="datetime-local" min="<?php echo date( 'Y-m-d\Th\:m', time() ) ?>"
-                      label="<?php _e( "Inicia em", "events-masters" ) ?>"
-            ></em-input>
+            <div class="em-fieldset-wrapper">
+                <em-input v-model="event.starts_at" :error="error" name="starts_at"
+                          required type="datetime-local" min="<?php echo date( 'Y-m-d\Th\:m', time() ) ?>"
+                          label="<?php _e( "Inicia em", "events-masters" ) ?>"
+                ></em-input>
 
-            <em-input v-model="event.finish_at" :error="error" name="finish_at"
-                      required type="datetime-local" :min="event.starts_at"
-                      label="<?php _e( "Finaliza em", "events-masters" ) ?>"
-            ></em-input>
+                <em-input v-model="event.finish_at" :error="error" name="finish_at"
+                          required type="datetime-local" :min="event.starts_at"
+                          label="<?php _e( "Finaliza em", "events-masters" ) ?>"
+                ></em-input>
+            </div>
+
         </fieldset>
 
         <em-input :error="error" name="tags" required
@@ -139,7 +143,7 @@ foreach ( $tags as $tag ) {
                     <li>
                         <input v-model="event.subscription_fee" type="radio" name="subscription_fee"
                                id="subscription_fee_FREE" value="FREE">
-                        <label for="subscription_fee_FREE"><?php _e( "Gratuíto", "events-masters" ) ?></label>
+                        <label for="subscription_fee_FREE"><?php _e( "Gratuito", "events-masters" ) ?></label>
                     </li>
                     <li>
                         <input v-model="event.subscription_fee" type="radio" name="subscription_fee"
@@ -181,25 +185,27 @@ foreach ( $tags as $tag ) {
 
         <fieldset id="create-event-new-organizer" v-if="'new' === event.placeId">
             <legend><?php _e( "Novo Local", "events-masters" ) ?></legend>
+            <div class="em-fieldset-wrapper">
+                <em-input v-model="event.place_title" :error="error" name="place_title" required
+                          label="<?php _e( "Nome", "events-masters" ) ?>"
+                ></em-input>
 
-            <em-input v-model="event.place_title" :error="error" name="place_title" required
-                      label="<?php _e( "Nome", "events-masters" ) ?>"
-            ></em-input>
+                <em-input v-model="event.place_address" :error="error" name="place_address" required
+                          label="<?php _e( "Endereço", "events-masters" ) ?>"
+                          placeholder="<?php _e( "Ex.: Rua Da Vitória 189, Bairro Centro", "events-masters" ) ?>"
+                ></em-input>
 
-            <em-input v-model="event.place_address" :error="error" name="place_address" required
-                      label="<?php _e( "Endereço", "events-masters" ) ?>"
-                      placeholder="<?php _e( "Ex.: Rua Da Vitória 189, Bairro Centro", "events-masters" ) ?>"
-            ></em-input>
+                <em-input v-model="event.place_city" :error="error" name="place_city" required
+                          label="<?php _e( "Cidade", "events-masters" ) ?>"
+                ></em-input>
 
-            <em-input v-model="event.place_city" :error="error" name="place_city" required
-                      label="<?php _e( "Cidade", "events-masters" ) ?>"
-            ></em-input>
+                <em-input v-model="event.place_phone" :error="error" name="place_phone"
+                          type="tel" v-mask="masks.phone"
+                          label="<?php _e( "Telefone", "events-masters" ) ?>"
+                          placeholder="<?php _e( "Ex.: (00) 0000-00000", "events-masters" ) ?>"
+                ></em-input>
+            </div>
 
-            <em-input v-model="event.place_phone" :error="error" name="place_phone"
-                      required type="tel" v-mask="masks.phone"
-                      label="<?php _e( "Telefone", "events-masters" ) ?>"
-                      placeholder="<?php _e( "Ex.: (00) 0000-00000", "events-masters" ) ?>"
-            ></em-input>
         </fieldset>
 
         <em-input v-model="event.external_link" :error="error" name="external_link"

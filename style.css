@@ -147,3 +147,14 @@ select {
     z-index: 100000;
     /* Above WP toolbar. */
 }
+
+
+#create-event-date .em-fieldset-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#create-event-date .form-row{
+    width: calc(50% - 10px);
+}
