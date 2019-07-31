@@ -62,7 +62,7 @@ foreach ($tags as $tag) {
                 ></em-input>
 
                 <em-input v-model="event.organizer_email" :error="error" name="organizer_email"
-                          required type="email"
+                          type="email"
                           label="<?php _e("Email do Organizador", "events-masters") ?>"
                 ></em-input>
             </div>
@@ -123,7 +123,7 @@ foreach ($tags as $tag) {
             <?php
             $prop = array();
             foreach ($tags_titles as $i => $tag) {
-                $prop[] = "{$tag}: '{$tag}'";
+                $prop[] = "'{$tag}': '{$tag}'";
             }
             $prop = '{' . implode(',', $prop) . '}';
             ?>
