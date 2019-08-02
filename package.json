@@ -4,7 +4,7 @@
   "description": "Zero40 WordPress Theme",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "php deploy/deployment.phar deploy/template.php"
   },
   "repository": {
     "type": "git",
