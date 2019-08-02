@@ -34,6 +34,14 @@ foreach ($tags as $tag) {
     <?php EM::get_template_part('ajax-loader', 'checkout') ?>
     <?php EM::get_template_part('form-errors', 'checkout') ?>
 
+    <template v-if="error">
+        <div v-for="errorMessage in Object.values(error)">
+            <span role="alert" class="em-input-error">
+                {{ errorMessage }}
+            </span>
+        </div>
+    </template>
+
     <form v-if="!success" class="em-create-event-form" id="create-event-form" method="post"
           @submit.prevent="registerEvent">
 
@@ -62,7 +70,7 @@ foreach ($tags as $tag) {
                 ></em-input>
 
                 <em-input v-model="event.organizer_email" :error="error" name="organizer_email"
-                          type="email"
+                          required type="email"
                           label="<?php _e("Email do Organizador", "events-masters") ?>"
                 ></em-input>
             </div>
@@ -215,14 +223,14 @@ foreach ($tags as $tag) {
 
         <p class="form-row em-image-upload">
             <img v-if="event.image_url" :src="event.image_url" width="300"
-                 alt="<?php _e( "Imagem do Evento", "events-masters" ) ?>"/>
+                 alt="<?php _e("Imagem do Evento", "events-masters") ?>"/>
             <br><br>
             <button class="btn" type="button" @click.prevent="openWidget">
                 <template v-if="event.image_url">
-                    <?php _e( "Alterar imagem", "events-masters" ) ?>
+                    <?php _e("Alterar imagem", "events-masters") ?>
                 </template>
                 <template v-else>
-                    <?php _e( "Selecionar imagem", "events-masters" ) ?>
+                    <?php _e("Selecionar imagem", "events-masters") ?>
                 </template>
             </button>
         </p>

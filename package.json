@@ -1,0 +1,22 @@
+{
+  "name": "zero40",
+  "version": "1.0.0",
+  "description": "Zero40 WordPress Theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/app-masters/zero40-wordpress.git"
+  },
+  "author": "appmasters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/app-masters/zero40-wordpress/issues"
+  },
+  "homepage": "https://gitlab.com/app-masters/zero40-wordpress#readme",
+  "devDependencies": {
+    "vue": "*"
+  }
+}
