@@ -42,7 +42,7 @@ foreach ($tags as $tag) {
         </div>
     </template>
 
-    <form v-if="!success" class="em-create-event-form" id="create-event-form" method="post"
+    <form v-if="!success" class="em-create-event-form" id="create-event-form" method="post" novalidate
           @submit.prevent="registerEvent">
 
         <em-input v-model="event.title" :error="error" name="title" required
@@ -222,6 +222,9 @@ foreach ($tags as $tag) {
         ></em-input>
 
         <p class="form-row em-image-upload">
+            <span v-if="error && error.image_url" role="alert" class="em-input-error">
+                {{ error.image_url }}
+            </span>
             <img v-if="event.image_url" :src="event.image_url" width="300"
                  alt="<?php _e("Imagem do Evento", "events-masters") ?>"/>
             <br><br>
