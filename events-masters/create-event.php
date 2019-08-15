@@ -35,9 +35,9 @@ foreach ($tags as $tag) {
     <?php EM::get_template_part('form-errors', 'checkout') ?>
 
     <template v-if="error">
-        <div v-for="errorField in Object.keys(error)">
-            <a :href="'#'+ errorField +'-field'" role="alert" class="em-input-error">
-                {{ error[errorField] }}
+        <div v-for="(field, message) in Object.keys(error)">
+            <a v-if="field != 'fatal'" :href="'#'+ field +'-field'" role="alert" class="em-input-error">
+                {{ message }}
             </a>
         </div>
     </template>
