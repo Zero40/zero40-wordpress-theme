@@ -35,7 +35,7 @@ foreach ($tags as $tag) {
     <?php EM::get_template_part('form-errors', 'checkout') ?>
 
     <template v-if="error">
-        <div v-for="(field, message) in Object.keys(error)">
+        <div v-for="(message, field) in error">
             <a v-if="field != 'fatal'" :href="'#'+ field +'-field'" role="alert" class="em-input-error">
                 {{ message }}
             </a>
@@ -226,13 +226,18 @@ foreach ($tags as $tag) {
         ></em-input>
 
         <p class="form-row em-image-upload">
+
+            <label for="image_url">
+                Imagem <abbr title="Obrigatório" class="required">*</abbr>
+            </label>
+
             <span v-if="error && error.image_url" role="alert" class="em-input-error">
                 {{ error.image_url }}
             </span>
             <img v-if="event.image_url" :src="event.image_url" width="300"
                  alt="<?php _e("Imagem do Evento", "events-masters") ?>"/>
             <br><br>
-            <button class="btn" type="button" @click.prevent="openWidget">
+            <button id="image_url" class="btn" type="button" @click.prevent="openWidget">
                 <template v-if="event.image_url">
                     <?php _e("Alterar imagem", "events-masters") ?>
                 </template>
@@ -243,11 +248,12 @@ foreach ($tags as $tag) {
         </p>
 
         <p>
-            <button type="submit" class="btn btn-primary"><?php _e("Registrar Evento", "events-masters") ?></button>
+            <button type="submit"
+                    class="btn btn-primary btn-lg"><?php _e("Registrar Evento", "events-masters") ?></button>
         </p>
     </form>
     <section v-else>
         <h3><?php _e("Evento recebido!", "events-masters") ?></h3>
-        <p><?php _e("Seu evento será aprovado e liberado em seguida.", "events-masters") ?></p>
+        <p><?php _e("Recebemos seu evento, obrigado. Validaremos as informações em breve para em seguida aprovar a publicação.", "events-masters") ?></p>
     </section>
 </div>
