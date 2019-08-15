@@ -158,3 +158,8 @@ select {
 #create-event-date .form-row{
     width: calc(50% - 10px);
 }
+
+#starts_at-field input,
+#finish_at-field input {
+    width: auto;
+}

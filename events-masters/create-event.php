@@ -35,10 +35,10 @@ foreach ($tags as $tag) {
     <?php EM::get_template_part('form-errors', 'checkout') ?>
 
     <template v-if="error">
-        <div v-for="errorMessage in Object.values(error)">
-            <span role="alert" class="em-input-error">
-                {{ errorMessage }}
-            </span>
+        <div v-for="errorField in Object.keys(error)">
+            <a :href="'#'+ errorField +'-field'" role="alert" class="em-input-error">
+                {{ error[errorField] }}
+            </a>
         </div>
     </template>
 
@@ -77,7 +77,7 @@ foreach ($tags as $tag) {
         </fieldset>
 
         <em-input :error="error" name="categoryId" required
-                  label="<?php _e("Categoria", "events-masters") ?>">
+                  label="<?php _e("Categoria do Evento", "events-masters") ?>">
             <select v-model="event.categoryId" slot="input" name="categoryId" id="categoryId" required>
                 <option :value="undefined" hidden><?php _e("Selecione...", "events-masters") ?></option>
                 <?php foreach ($categories as $category): ?>
@@ -108,18 +108,22 @@ foreach ($tags as $tag) {
         </em-input>
 
         <fieldset id="create-event-date">
-            <legend><?php _e("Data do Evento", "events-masters") ?></legend>
+            <legend><?php _e("Data e Hora do Evento", "events-masters") ?></legend>
 
             <div class="em-fieldset-wrapper">
-                <em-input v-model="event.starts_at" :error="error" name="starts_at"
-                          required type="datetime-local" min="<?php echo date('Y-m-d\Th\:m', time()) ?>"
+                <em-input v-model="event_starts_at_date" :error="error" name="starts_at"
+                          required type="date" min="<?php echo date('Y-m-d\Th\:m', time()) ?>"
                           label="<?php _e("Inicia em", "events-masters") ?>"
-                ></em-input>
+                >
+                    <input v-model="event_starts_at_time" name="starts_at_time" required type="time"/>
+                </em-input>
 
-                <em-input v-model="event.finish_at" :error="error" name="finish_at"
-                          required type="datetime-local" :min="event.starts_at"
+                <em-input v-model="event_finish_at_date" :error="error" name="finish_at"
+                          required type="date" :min="event_starts_at_date"
                           label="<?php _e("Finaliza em", "events-masters") ?>"
-                ></em-input>
+                >
+                    <input v-model="event_finish_at_time" name=finish_at_time" required type="time"/>
+                </em-input>
             </div>
 
         </fieldset>
@@ -217,7 +221,7 @@ foreach ($tags as $tag) {
         </fieldset>
 
         <em-input v-model="event.external_link" :error="error" name="external_link"
-                  type="url"
+                  type="url" required
                   label="<?php _e("Website do evento", "events-masters") ?>"
         ></em-input>
 
