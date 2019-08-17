@@ -12,8 +12,11 @@ get_header(); ?>
 
 					<?php while ( have_posts() ): the_post() ?>
                         <article id="event-<?php the_ID() ?>" <?php post_class() ?>>
-                            <figure class="post-image">
-                                <img width="800" height="400" src="<?= get_post()->_image_url ?>" alt="post1"></figure>
+                            <?php if(get_post()->_image_url): ?>
+                                <figure class="post-image">
+                                    <img width="800" height="400" src="<?= get_post()->_image_url ?>" alt="post1">
+                                </figure>
+                            <?php endif ?>
                             <div class="clearfix">
 
                             </div>
