@@ -11,10 +11,11 @@
 ?>
 <div class="row multi-columns-row">
     <?php while ( have_posts() ): the_post() ?>
-        <article class="col-sm-4 col-md-4 col-lg-4 grid" data-sr-id="<?php get_the_ID() ?>"
-                 style="; margin-bottom: 30px; visibility: visible;  -webkit-transform: translateY(0) scale(1) rotateZ(0); opacity: 1;transform: translateY(0) scale(1) rotateZ(0); opacity: 1;-webkit-transition: -webkit-transform 0.9s ease-in-out 0.2s, opacity 0.9s ease-in-out 0.2s; transition: transform 0.9s ease-in-out 0.2s, opacity 0.9s ease-in-out 0.2s; ">
+        <article id="event-shortcode-<?php the_ID() ?>" <?php post_class('event-shortcode-post col-sm-4 col-md-4 col-lg-4 grid'); ?>
+                 data-sr-id="<?php get_the_ID() ?>"
+                 style="margin-bottom: 30px; visibility: visible;  -webkit-transform: translateY(0) scale(1) rotateZ(0); opacity: 1;transform: translateY(0) scale(1) rotateZ(0); opacity: 1;-webkit-transition: -webkit-transform 0.9s ease-in-out 0.2s, opacity 0.9s ease-in-out 0.2s; transition: transform 0.9s ease-in-out 0.2s, opacity 0.9s ease-in-out 0.2s; ">
             <a href="<?php the_permalink() ?>" rel="prettyPhoto"
-               title="<?php echo get_the_title() ?>" class="fancybox-thumb hovereffect">
+               title="<?php echo get_the_title() ?>" class="event-shortcode-image-link fancybox-thumb hovereffect">
                 <?php if(get_post()->_thumb_url): ?>
                     <img src="<?= get_post()->_thumb_url ?>" alt="<?= get_the_title() ?>"
                          class="img-responsive center-block">

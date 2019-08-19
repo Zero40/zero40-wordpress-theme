@@ -4,7 +4,8 @@
   "description": "Zero40 WordPress Theme",
   "main": "gulpfile.js",
   "scripts": {
-    "deploy": "php deploy/deployment.phar deploy/template.php"
+    "deploy": "php deploy/deployment.phar deploy/template.php",
+    "start": "docker-compose up"
   },
   "repository": {
     "type": "git",

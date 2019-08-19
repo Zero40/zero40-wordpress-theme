@@ -18,7 +18,7 @@
                 <h2 class="smalltitle">Agenda de Eventos<span></span></h2>
             </div>
         </div>
-	    <?php echo do_shortcode( '[em-events items="3" filters="current,future" orderby="starts_at"]' ) ?>
+<!--	    --><?php //echo do_shortcode( '[em-events items="3" filters="current,future" orderby="starts_at"]' ) ?>
 
         <div class="row" >
             <div class="col-md-12 text-center">

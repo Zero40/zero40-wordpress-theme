@@ -41,24 +41,43 @@ get_header(); ?>
 							<?php if ( EM::get_the_tags() ): ?>
                                 <ul class="pagemeta">
 									<?php foreach ( EM::get_the_tags() as $tag ): ?>
-                                        <li><i class="fa fa-tag"></i><?= get_term_field( 'title', $tag ) ?></li>
+                                        <li><i class="fa fa-tag"></i><?= get_term_field( 'name', $tag ) ?></li>
 									<?php endforeach; ?>
                                 </ul>
 							<?php endif ?>
 
-                            <div class="entry">
+                            <?php if(!EM::is_event_finished()): ?>
+                                <p class="event-warning" role="alert">
+                                    <?php _e("Evento já realizado", "events-masters") ?>
+                                </p>
+                            <?php endif ?>
 
+
+                            <div class="entry">
                                 <div><?php the_content() ?></div>
 
-								<?php if ( get_post()->_local == "PRESENTIAL" && EM::get_the_place() ) : ?>
-                                    <address class="event-place">
-                                        Local: <?= get_the_title( EM::get_the_place() ) ?><br>
-                                        Endereço: <?= EM::get_the_place()->_address ?>
-                                    </address>
+								<?php if ( get_post()->_local === "PRESENTIAL" && EM::get_the_place() ) : ?>
+                                    <section id="event-location">
+                                        <h2><?php _e("Localização", "events-masters") ?></h2>
+                                        <address class="event-place">
+                                            <h4><?php echo get_the_title( EM::get_the_place() ) ?></h4>
+                                            <?= EM::get_the_place()->_address ?>, <?php echo EM::get_the_place()->_city ?>
+                                            <?php if(EM::get_the_place()->_short_link_maps): ?>
+                                                <a href="<?php echo EM::get_the_place()->_short_link_maps ?>" target="_blank"><?php _e("- Mapa", "events-masters") ?></a>
+                                            <?php endif ?>
+                                            <br>
+
+                                            <a href="tel:<?php echo EM::get_the_place()->_phone ?>" target="_blank"><?php echo EM::get_the_place()->_phone ?></a>
+                                            <?php if(EM::get_the_place()->_site): ?>
+                                                <br>
+                                                <a href="<?php echo EM::get_the_place()->_site ?>" target="_blank"><?php echo EM::get_the_place()->_site ?></a>
+                                            <?php endif ?>
+                                        </address>
+                                    </section>
 								<?php endif ?>
 
                                 <p class="col-md-12 text-center">
-                                    <a href="<?php echo get_post()->_external_link ?>"
+                                    <a href="<?php echo EM::get_the_field('external_link') ?>"
                                        class="btn btn-danger btn-lg btn-primary">Ver detalhes</a>
                                 </p>
 
@@ -72,11 +91,11 @@ get_header(); ?>
                         <div class="clearfix"></div>
 
                         <aside id="author-info" class="clearfix">
+                            <h3><?php _e("Organizador", "events-masters") ?></h3>
                             <div class="author-image">
                                 <a href="http://demo.themely.com/integral/author/admin/">
                                     <img alt=""
-                                         src="http://2.gravatar.com/avatar/b5f65448f343496a1cdd03c5a2abbe4b?s=160&amp;d=mm&amp;r=g"
-                                         srcset="http://2.gravatar.com/avatar/b5f65448f343496a1cdd03c5a2abbe4b?s=320&amp;d=mm&amp;r=g 2x"
+                                         src="<?php echo EM::get_the_organizer()->_thumb_url ?: 'http://mscivilrightsproject.org/wp-content/themes/civil-rights-blank-theme/css/img/person-icon.png'?>"
                                          class="avatar avatar-160 photo"
                                          height="160" width="160">
                                 </a>

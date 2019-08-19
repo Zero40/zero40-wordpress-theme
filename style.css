@@ -149,17 +149,40 @@ select {
 }
 
 
-#create-event-date .em-fieldset-wrapper{
+#create-event-date .em-fieldset-wrapper {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-#create-event-date .form-row{
+#create-event-date .form-row {
     width: calc(50% - 10px);
 }
 
 #starts_at-field input,
 #finish_at-field input {
     width: auto;
+}
+
+/*Event shortcode*/
+.event-shortcode-post .event-shortcode-image-link {
+    height: 240px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-shortcode-post .event-shortcode-image-link img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.event-warning {
+    text-align: center;
+    background-color: #ff00002e;
+    padding: 13px;
+    font-weight: 800;
 }

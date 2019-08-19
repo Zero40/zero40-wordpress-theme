@@ -25,11 +25,11 @@ get_header(); ?>
                                 </a>
                             </h2>
 
-                            <ul class="pagemeta" style="margin-bottom: 0px;">
-                                <li><i class="fa fa-envelope"></i>
-									<?php echo get_post()->_email_from ?>
-                                </li>
-                            </ul>
+<!--                            <ul class="pagemeta" style="margin-bottom: 0px;">-->
+<!--                                <li><i class="fa fa-envelope"></i>-->
+<!--									--><?php //echo get_post()->_email_from ?>
+<!--                                </li>-->
+<!--                            </ul>-->
 
                             <div class="entry">
 
