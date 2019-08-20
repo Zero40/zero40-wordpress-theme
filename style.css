@@ -166,11 +166,17 @@ select {
 
 /*Event shortcode*/
 .event-shortcode-post .event-shortcode-image-link {
-    height: 240px;
+    height: 150px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 767px) {
+    .event-shortcode-post .event-shortcode-image-link {
+        height: auto;
+    }
 }
 
 .event-shortcode-post .event-shortcode-image-link img {
@@ -186,3 +192,4 @@ select {
     padding: 13px;
     font-weight: 800;
 }
+
