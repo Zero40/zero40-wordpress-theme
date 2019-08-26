@@ -198,6 +198,12 @@ select {
     color: #fff;
 }
 
+.newsletter input,
+.newsletter textarea,
+.newsletter select {
+    color: initial;
+}
+
 .em-newsletter-subscribe button,
 .newsletter button {
     font-size: 1.071rem;
