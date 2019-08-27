@@ -87,7 +87,6 @@ get_header(); ?>
 
                         </article> <!--post -->
 
-
                         <div class="clearfix"></div>
 
                         <aside id="author-info" class="clearfix">
