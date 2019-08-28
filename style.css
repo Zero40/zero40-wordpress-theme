@@ -230,3 +230,12 @@ select {
     max-width: 340px;
     margin: 0 auto;
 }
+
+.events-masters .em-input-list {
+    list-style: none;
+}
+
+.events-masters .em-input-list > li {
+    padding: 0;
+    background: none;
+}
