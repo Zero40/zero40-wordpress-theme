@@ -239,3 +239,9 @@ select {
     padding: 0;
     background: none;
 }
+
+.events-masters .em-input-list > li label,
+.events-masters .em-input-list > li input {
+    margin: 0;
+    vertical-align: middle;
+}
