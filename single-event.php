@@ -46,7 +46,7 @@ get_header(); ?>
                                 </ul>
 							<?php endif ?>
 
-                            <?php if(!EM::is_event_finished()): ?>
+                            <?php if(EM::is_event_finished()): ?>
                                 <p class="event-warning" role="alert">
                                     <?php _e("Evento já realizado", "events-masters") ?>
                                 </p>

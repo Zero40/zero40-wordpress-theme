@@ -18,12 +18,16 @@
                 <h2 class="smalltitle">Agenda de eventos da cidade<span></span></h2>
             </div>
         </div>
-<!--	    --><?php //echo do_shortcode( '[em-events items="3" filters="current,future" orderby="starts_at"]' ) ?>
+        	    <?php echo do_shortcode( '[em-events items="3" filters="current,future" orderby="starts_at"]' ) ?>
 
-        <div class="row" >
+        <div class="row">
             <div class="col-md-12 text-center">
-                <a href="<?= get_site_url() . "/incluir-evento/" ?>" class="btn btn-danger btn-lg btn-primary">Incluir
-                    Evento</a>
+                <a href="<?= get_site_url() . "/incluir-evento/" ?>" class="btn btn-danger btn-lg btn-primary">
+                    Incluir Evento
+                </a><br><br>
+                <a href="<?= get_site_url() . "/eventos" ?>" class="btn btn-danger btn-primary">
+                    Todos os eventos
+                </a>
             </div>
         </div>
     </div>
@@ -34,16 +38,16 @@
 <?php
 
 
-function truncate( $text, $chars = 25 ) {
-	if ( strlen( $text ) <= $chars ) {
-		return $text;
-	}
-	$text = $text . " ";
-	$text = substr( $text, 0, $chars );
-	$text = substr( $text, 0, strrpos( $text, ' ' ) );
-	$text = $text . "...";
+function truncate($text, $chars = 25) {
+    if (strlen( $text ) <= $chars) {
+        return $text;
+    }
+    $text = $text . " ";
+    $text = substr( $text, 0, $chars );
+    $text = substr( $text, 0, strrpos( $text, ' ' ) );
+    $text = $text . "...";
 
-	return $text;
+    return $text;
 }
 
 ?>
