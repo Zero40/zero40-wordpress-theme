@@ -56,9 +56,14 @@ get_header(); ?>
                             <div class="entry">
                                 <div><?php the_content() ?></div>
 
+                                <p class="col-md-12 text-center">
+                                    <a href="<?php echo EM::get_the_field('external_link') ?>"
+                                       class="btn btn-danger btn-lg btn-primary">+ detalhes do evento</a>
+                                </p>
+
 								<?php if ( get_post()->_local === "PRESENTIAL" && EM::get_the_place() ) : ?>
                                     <section id="event-location">
-                                        <h2><?php _e("Localização", "events-masters") ?></h2>
+                                        <h2><?php _e("Local do evento", "events-masters") ?></h2>
                                         <address class="event-place">
                                             <h4><?php echo get_the_title( EM::get_the_place() ) ?></h4>
                                             <?= EM::get_the_place()->_address ?>, <?php echo EM::get_the_place()->_city ?>
@@ -75,11 +80,6 @@ get_header(); ?>
                                         </address>
                                     </section>
 								<?php endif ?>
-
-                                <p class="col-md-12 text-center">
-                                    <a href="<?php echo EM::get_the_field('external_link') ?>"
-                                       class="btn btn-danger btn-lg btn-primary">Ver detalhes</a>
-                                </p>
 
                             </div>
 
