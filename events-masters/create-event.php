@@ -52,7 +52,7 @@ foreach ($tags as $tag) {
         <em-input :error="error" name="organizerId" required
                   label="<?php _e("Organizador", "events-masters") ?>">
             <select v-model="event.organizerId" slot="input" name="organizerId" id="organizerId" required>
-                <option hidden :value="undefined"><?php _e("Selecione...", "events-masters") ?></option>
+                <option disabled :value="undefined"><?php _e("Selecione...", "events-masters") ?></option>
                 <option value="new"><?php _e("Novo Organizador", "events-masters") ?></option>
                 <optgroup label="<?php _e("Organizadores", "events-masters") ?>">
                     <?php foreach ($organizers as $organizer): ?>
@@ -79,7 +79,7 @@ foreach ($tags as $tag) {
         <em-input :error="error" name="categoryId" required
                   label="<?php _e("Categoria do Evento", "events-masters") ?>">
             <select v-model="event.categoryId" slot="input" name="categoryId" id="categoryId" required>
-                <option :value="undefined" hidden><?php _e("Selecione...", "events-masters") ?></option>
+                <option :value="undefined" disabled><?php _e("Selecione...", "events-masters") ?></option>
                 <?php foreach ($categories as $category): ?>
                     <option value="<?php echo get_term_meta($category->term_id, '_external_id', true) ?>">
                         <?php echo $category->name ?>
@@ -91,7 +91,7 @@ foreach ($tags as $tag) {
         <em-input :error="error" name="typeId" required
                   label="<?php _e("Tipo do Evento", "events-masters") ?>">
             <select v-model="event.typeId" slot="input" name="typeId" id="typeId" required>
-                <option :value="undefined" hidden><?php _e("Selecione...", "events-masters") ?></option>
+                <option :value="undefined" disabled><?php _e("Selecione...", "events-masters") ?></option>
                 <?php foreach ($types as $type): ?>
                     <option value="<?php echo get_term_meta($type->term_id, '_external_id', true) ?>">
                         <?php echo $type->name ?>
@@ -175,7 +175,7 @@ foreach ($tags as $tag) {
         <em-input :error="error" name="local" required
                   label="<?php _e("Tipo de evento", "events-masters") ?>">
             <select v-model="event.local" slot="input" name="local" id="local" required>
-                <option :value="undefined" hidden><?php _e("Selecione...", "events-masters") ?></option>
+                <option :value="undefined" disabled><?php _e("Selecione...", "events-masters") ?></option>
                 <option value="PRESENTIAL"><?php _e("Presencial", "events-masters") ?></option>
                 <option value="SEMI_PRESENTIAL"><?php _e("Semi Presencial", "events-masters") ?></option>
                 <option value="ONLINE"><?php _e("Online", "events-masters") ?></option>
@@ -185,7 +185,7 @@ foreach ($tags as $tag) {
         <em-input :error="error" v-if="event.local !== 'ONLINE'" name="placeId" required
                   label="<?php _e("Local", "events-masters") ?>">
             <select v-model="event.placeId" slot="input" name="placeId" id="placeId" required>
-                <option :value="undefined" hidden><?php _e("Selecione...", "events-masters") ?></option>
+                <option :value="undefined" disabled><?php _e("Selecione...", "events-masters") ?></option>
                 <option value="new"><?php _e("Novo Local", "events-masters") ?></option>
                 <optgroup label="<?php _e("Locais", "events-masters") ?>">
                     <?php foreach ($places as $place): ?>
