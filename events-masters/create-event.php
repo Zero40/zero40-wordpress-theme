@@ -53,7 +53,7 @@ foreach ($tags as $tag) {
                   label="<?php _e("Organizador", "events-masters") ?>">
             <select v-model="event.organizerId" slot="input" name="organizerId" id="organizerId" required>
                 <option disabled :value="undefined"><?php _e("Selecione...", "events-masters") ?></option>
-                <option value="new"><?php _e("Novo Organizador", "events-masters") ?></option>
+                <option value="new">+ <?php _e("Novo Organizador", "events-masters") ?></option>
                 <optgroup label="<?php _e("Organizadores", "events-masters") ?>">
                     <?php foreach ($organizers as $organizer): ?>
                         <option value="<?php echo $organizer->_external_id ?>"><?php echo $organizer->post_title ?></option>
@@ -186,7 +186,7 @@ foreach ($tags as $tag) {
                   label="<?php _e("Local", "events-masters") ?>">
             <select v-model="event.placeId" slot="input" name="placeId" id="placeId" required>
                 <option :value="undefined" disabled><?php _e("Selecione...", "events-masters") ?></option>
-                <option value="new"><?php _e("Novo Local", "events-masters") ?></option>
+                <option value="new">+ <?php _e("Novo Local", "events-masters") ?></option>
                 <optgroup label="<?php _e("Locais", "events-masters") ?>">
                     <?php foreach ($places as $place): ?>
                         <option value="<?php echo $place->_external_id ?>"><?php echo $place->post_title ?></option>
