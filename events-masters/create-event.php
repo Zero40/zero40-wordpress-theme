@@ -65,7 +65,7 @@ foreach ($tags as $tag) {
         <fieldset id="create-event-new-organizer" v-if="'new' === event.organizerId">
             <legend><?php _e("Novo Organizador", "events-masters") ?></legend>
             <div class="em-fieldset-wrapper">
-                <em-input v-model="event.organizer_title" :error="error" name="organizer_title" required
+                <em-input v-model="event.organizer_title" :error="error" name="organizer_title" required maxlength="70"
                           label="<?php _e("Título do Organizador", "events-masters") ?>"
                 ></em-input>
 
