@@ -72,6 +72,18 @@ select {
     color: lightcoral;
 }
 
+.flexbox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    justify-content: space-between;
+}
+
 .home-blog-entry-text h3 > a {
     font-size: 1.6rem !important;
     letter-spacing: 0.25px;
@@ -244,4 +256,80 @@ select {
 .events-masters .em-input-list > li input {
     margin: 0;
     vertical-align: middle;
+}
+
+.navbar-brand {
+    max-width: 200px;
+    padding: 5px 0;
+}
+
+
+
+/* STARTUPS - List */
+.post-list {width: 100%;}
+.post-item {width: 30%; margin-bottom:60px; padding: 0;}
+.post-item .post-image {width: 100%; height: 80px; padding:0 60px; text-align: center; align-items: center;}
+.post-item .post-image img {width: 100%; height: auto;}
+.post-item h2 {font-size: 18px; margin: 0 0 10px;}
+.post-item p {font-size: 14px;}
+.fake-item {width: 30%; height: 0; overflow: hidden;}
+
+
+/* STARTUP - Single*/
+#startups .page-header {align-items: center; margin:0;}
+#startups .post-image {width: 400px; float: right; background-color: #fafafa; padding: 30px; margin-bottom: 10px;}
+#startups .img-responsive {width: 100%; height: auto;}
+#startups h1 {color: #fcc500; margin: 0;}
+#startups h2 {font-size: 16px; color: #fcc500; font-weight: bold; margin: 0 0 10px;}
+#startups p {font-size: 14px; margin: 0;}
+#startups p a {color: #000; border-bottom: 2px solid #fcc500; padding-bottom: 1px; text-decoration: none;}
+#startups p a:hover {color: #fcc500;}
+
+#startups .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-gap: 30px 30px ;
+}
+
+#startups article {padding: 30px; background-color: #fafafa;}
+
+#startups .grid-full {margin-top:30px;}
+
+/* STARTUPS - Responsivo */
+@media (max-width: 991px) {
+    #startups .page-header {margin-top: 30px;}
+
+}
+
+@media (max-width: 767px) {
+    #startups .post-image {width: 100%; text-align: center; margin: 30px 0;}
+    #startups .img-responsive {width: 80%; display: inline-block;}
+    #startups article  {margin-top: 30px;}
+}
+
+
+#cadastro .wpcf7-form-control-wrap {margin-bottom: 10px; display: block;}
+#cadastro label.pergunta {color: #fcc500; font-size: 16px; margin:40px 0 0;}
+#cadastro .col-md-6 label.pergunta {margin: 10px 0 5px;}
+
+#cadastro .file-row {width:100%; height:39px; line-height:39px; padding:0 10px; color: #000; border: 1px solid #658c99; float: left; clear: left; margin: 5px 0 50px;}
+#cadastro .file-row input {width: 100%; font-size: 11px; line-height: 1; padding: 10px; float: left; clear: left;}
+#cadastro .file-row input.toolarge {background:url('img/ico_form_error.png') right center no-repeat transparent;}
+
+#cadastro .wpcf7-submit {background-color: #fcc500; color: #fff; padding: 12px 30px; text-transform: uppercase; border: 0;
+
+    -webkit-transition:all 0.3s;
+    -moz-transition:all 0.3s;
+    -o-transition:all 0.3s;
+    transition:all 0.3s;
+
+    -webkit-appearance: none;
+}
+
+#cadastro .wpcf7-submit:hover {background-color: #903633;}
+
+
+/* HIDE GOOGLE RECAPTCHA BADGE*/
+.grecaptcha-badge {
+    visibility: hidden;
 }

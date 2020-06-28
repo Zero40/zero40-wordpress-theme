@@ -32,7 +32,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>    
+<body <?php body_class(); ?>>
 
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 
