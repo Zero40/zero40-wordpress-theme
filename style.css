@@ -1,0 +1,361 @@
+/*
+ Theme Name:   Zero40
+ Theme URI:    https://gitlab.com/app-masters/zero40-wordpress
+ Description:  Zero 40 Theme
+ Author:       Tiago Gouvêa
+ Author URI:   https://gitlab.com/TiagoGouvea
+ Template:     integral
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  zero40
+*/
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="color"],
+textarea {
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    line-height: 22px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+input[type="radio"] {
+    width: inherit;
+}
+
+label {
+    /*font-size: 1.4em;*/
+    font-weight: bolder;
+    margin-top: 1em;
+    display: block !important;
+    position: relative !important;
+}
+
+select {
+    height: 2em;
+    width: 100%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.error {
+    color: lightcoral;
+    display: block;
+    margin: .5em;
+}
+
+.success {
+    color: green;
+    text-align: center;
+}
+
+.required {
+    color: lightcoral;
+}
+
+.flexbox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    justify-content: space-between;
+}
+
+.home-blog-entry-text h3 > a {
+    font-size: 1.6rem !important;
+    letter-spacing: 0.25px;
+}
+
+/****** sidebar *******/
+
+.sidebar .textwidget {
+    color: #666;
+    font-size: 14px !important;
+}
+
+.checkbox_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.inline_checkbox {
+    margin: 3px;
+    display: flex;
+}
+
+.inline_checkbox .checkbox {
+    text-align: left;
+    margin-top: 2px !important;
+}
+
+.inline_checkbox span {
+    margin-left: 1em;
+    font-size: 12px;
+}
+
+.em-input-list {
+    list-style: none;
+    padding: 0;
+}
+
+
+.events-masters input + label,
+.em-input-list label {
+    display: inline-block !important;
+}
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+
+#create-event-date .em-fieldset-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#create-event-date .form-row {
+    width: calc(50% - 10px);
+}
+
+#starts_at-field input,
+#finish_at-field input {
+    width: auto;
+}
+
+/*Event shortcode*/
+.event-shortcode-post .event-shortcode-image-link {
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .event-shortcode-post .event-shortcode-image-link {
+        height: auto;
+    }
+}
+
+.event-shortcode-post .event-shortcode-image-link img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.event-warning {
+    text-align: center;
+    background-color: #ff00002e;
+    padding: 13px;
+    font-weight: 800;
+}
+
+/*Newsletter*/
+.newsletter {
+    color: #fff;
+}
+
+.newsletter input,
+.newsletter textarea,
+.newsletter select {
+    color: initial;
+}
+
+.events-masters button,
+.newsletter button {
+    font-size: 1.071rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    line-height: normal;
+    letter-spacing: 2px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: 0;
+    color: #fff;
+    display: inline-block;
+    background-color: #fcc500;
+}
+
+.newsletter button {
+    width: 100%;
+}
+
+.newsletter .em-newsletter-subscribe {
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+.events-masters .em-input-list {
+    list-style: none;
+}
+
+.events-masters .em-input-list > li {
+    padding: 0;
+    background: none;
+}
+
+.events-masters .em-input-list > li label,
+.events-masters .em-input-list > li input {
+    margin: 0;
+    vertical-align: middle;
+}
+
+nav.navbar .container{
+    flex-wrap: nowrap !important;
+}
+
+.navbar-brand {
+    max-width: 200px;
+    padding: 5px 0;
+}
+
+navbar-brand>img {
+	max-height: 60px;
+}
+
+
+
+/* STARTUPS - List */
+#startups .post-list {width: 100%;}
+#startups .post-item {margin-bottom:60px; margin: 10px;}
+#startups .post-item .post-image {width: 100%; height: 140px; padding:0 60px; text-align: center; align-items: center;}
+#startups .post-item .post-image img {width: 100%; height: auto;}
+#startups .post-item h2 {font-size: 26px; margin: 0 0 10px;}
+#startups .post-item p {font-size: 14px;}
+#startups .fake-item {width: 30%; height: 0; overflow: hidden;}
+
+.startup-details { background-color: #fafafa; margin-bottom: 15px; padding: 5px; }
+.startup-details span {
+    font-size: 90%;
+}
+.startup-details ul {
+    padding-left: 20px;
+    list-style-type: square;
+    padding-top: 5px;
+}
+
+.startup-details li {
+    font-size: 75%;
+    line-height: 130%;
+}
+
+
+
+/* STARTUP - Single*/
+#startup {margin-bottom: 20px}
+#startup .page-header {align-items: center; margin:0;}
+#startup .post-image {width: 400px; float: right; padding: 30px; margin-bottom: 10px;}
+#startup .img-responsive {width: 100%; height: auto;}
+#startup article {margin: 15px 0 10px}
+#startup h1 {color: #fcc500; margin: 0; font-size: 40px;}
+#startup h2 {font-size: 18px; color: #fcc500; font-weight: bold; margin: 0 0 10px;}
+#startup p {font-size: 14px; margin: 0;}
+#startup p a {color: #000; border-bottom: 2px solid #fcc500; padding-bottom: 1px; text-decoration: none;}
+#startup p a:hover {color: #fcc500;}
+
+#startup .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-gap: 30px 30px ;
+}
+
+#startup article {padding: 30px; background-color: #fafafa;}
+
+#startup .grid-full {margin-top:30px;}
+
+/* STARTUPS - Responsivo */
+@media (max-width: 991px) {
+    #startup .page-header {margin-top: 30px;}
+
+}
+
+@media (max-width: 767px) {
+    #startup .post-image {width: 100%; text-align: center; margin: 30px 0;}
+    #startup .img-responsive {width: 80%; display: inline-block;}
+    #startup article  {margin-top: 30px;}
+}
+
+
+#cadastro .wpcf7-form-control-wrap {margin-bottom: 10px; display: block;}
+#cadastro label.pergunta {color: #fcc500; font-size: 16px; margin:40px 0 0;}
+#cadastro .col-md-6 label.pergunta {margin: 10px 0 5px;}
+
+#cadastro .file-row {width:100%; height:39px; line-height:39px; padding:0 10px; color: #000; border: 1px solid #658c99; float: left; clear: left; margin: 5px 0 50px;}
+#cadastro .file-row input {width: 100%; font-size: 11px; line-height: 1; padding: 10px; float: left; clear: left;}
+#cadastro .file-row input.toolarge {background:url('img/ico_form_error.png') right center no-repeat transparent;}
+
+#cadastro .wpcf7-submit {background-color: #fcc500; color: #fff; padding: 12px 30px; text-transform: uppercase; border: 0;
+
+    -webkit-transition:all 0.3s;
+    -moz-transition:all 0.3s;
+    -o-transition:all 0.3s;
+    transition:all 0.3s;
+
+    -webkit-appearance: none;
+}
+
+#cadastro .wpcf7-submit:hover {background-color: #903633;}
+
+
+/* HIDE GOOGLE RECAPTCHA BADGE*/
+.grecaptcha-badge {
+    visibility: hidden;
+}
