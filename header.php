@@ -23,6 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.mask.min.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri() ?>/js/tagify.js"></script>
@@ -87,7 +88,7 @@
                                 'container'         => 'div',
                                 'container_class'   => 'collapse navbar-collapse',
                                 'container_id'      => 'navbar-ex-collapse',
-                                'menu_class'        => 'nav navbar-nav navbar-right',
+                                'menu_class'        => 'nav navbar-nav navbar-right navbar-expand-lg',
                                 'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                                 'walker'            => new wp_bootstrap_navwalker())
                             );

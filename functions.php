@@ -245,3 +245,60 @@ function eventsLogout( $atts ) {
 function getOrganizerLink( $event ) {
 	return get_site_url() . "/organizador/" . $event->organizer_id . "/";
 }
+
+
+// STARTUPS - Formulário
+
+add_filter( 'cf7_2_post_status_novo-evento_copy', 'publish_new_novo_evento_copy',10,3);
+/**
+ * Function to change the post status of saved/submitted posts.
+ * @param string $status the post status, default is 'draft'.
+ * @param string $ckf7_key unique key to identify your form.
+ * @param array $submitted_data complete set of data submitted in the form as an array of field-name=>value pairs.
+ * @return string a valid post status ('publish'|'draft'|'pending'|'trash')
+ */
+function publish_new_novo_evento_copy($status, $ckf7_key, $submitted_data){
+    /*The default behaviour is to save post to 'draft' status.  If you wish to change this, you can use this filter and return a valid post status: 'publish'|'draft'|'pending'|'trash'*/
+    return 'draft';
+}
+
+//
+
+function getTeamSize(){
+    $team_size = get_field('team_size');
+    $size = explode("-",$team_size);
+    $min = $size[0];
+    $max = $size[1];
+    $team['1-5']=1;
+    $team['5-10']=2;
+    $team['11-20']=3;
+    $team['21-40']=4;
+    $team['41-100']=6;
+
+    $repeat = $team[$team_size];
+    $icons = str_repeat("<i class=\"fa fa-user-o\" aria-hidden=\"true\" title=\"Equipe entre $min e $max pessoas, incluindo os sócios\"></i>", $repeat);
+    return $icons;
+}
+
+function getActualMoment(){
+    $actual_moment = get_field('actual_moment');
+    $actual_moment = substr($actual_moment,0, strpos($actual_moment,"("));
+    return "<span>Momento atual: $actual_moment</span>";
+}
+
+function getTarget(){
+    $target = get_field('target');
+    $target = substr($target,0, strpos($target,"("));
+    return "<span>Público alvo: $target</span>";
+}
+
+function getBusinessArea(){
+    $business_area = get_field('business_area');
+    return "<ul><li>" . implode( '</li><li>', $business_area) . "</li></ul>";
+}
+
+function getBusinessModel(){
+    $business_model = get_field('business_model');
+    $business_model = substr($business_model,0, strpos($business_model,"("));
+    return "<span>Modelo negócio: $business_model</span>";
+}
