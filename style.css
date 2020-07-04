@@ -258,6 +258,10 @@ select {
     vertical-align: middle;
 }
 
+nav.navbar .container{
+    flex-wrap: nowrap !important;
+}
+
 .navbar-brand {
     max-width: 200px;
     padding: 5px 0;
@@ -292,6 +296,8 @@ navbar-brand>img {
     font-size: 75%;
     line-height: 130%;
 }
+
+
 
 /* STARTUP - Single*/
 #startup {margin-bottom: 20px}
