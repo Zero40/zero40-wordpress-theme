@@ -1,6 +1,9 @@
-# zero40-wordpress-theme
+# Tema Wordpress Zero40
 
-Tema do wordpress do site do [Zero40 - ecossistema empreendedor de JF](https://zero40.com.br/).
+Tema do wordpress do site do [Zero40 - ecossistema empreendedor de JF](https://zero40.com.br/).   
+
+![Logo Zero40](https://zero40.com.br/wp-content/uploads/2017/05/logo_zero40_horizontal_fundo_claro.png)
+
 
 # Participe!
 
@@ -9,7 +12,7 @@ Se você quiser participar de um projeto tão legal, você precisa:
 - Saber lidar com temas de wordpress
 - Saber trabalhar em equipe
 
-Veja as [issues](https://github.com/TiagoGouvea/zero40-wordpress-theme/issues) atuais e comente na issue na qual deseja trabalhar.
+Veja as [issues](https://github.com/TiagoGouvea/zero40-wordpress-theme/issues) atuais e comente na issue na qual deseja trabalhar (as issues marcadas como "Boa primeira issue" são mais fáceis).
 
 # O tema
 
