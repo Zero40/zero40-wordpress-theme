@@ -1,9 +1,9 @@
+![Logo Zero40](https://zero40.com.br/wp-content/uploads/2017/05/logo_zero40_horizontal_fundo_claro.png)
+
+
 # Tema Wordpress Zero40
 
 Tema do wordpress do site do [Zero40 - ecossistema empreendedor de JF](https://zero40.com.br/).   
-
-![Logo Zero40](https://zero40.com.br/wp-content/uploads/2017/05/logo_zero40_horizontal_fundo_claro.png)
-
 
 # Participe!
 
