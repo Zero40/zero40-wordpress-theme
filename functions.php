@@ -99,6 +99,15 @@ function formForNewsletter( $atts ) {
 
 	return $output;
 }
+// Shortcode to newsletter subscription
+add_shortcode( 'form-newsletter-mailchimp', 'formForNewsletterMailchimp' );
+function formForNewsletterMailchimp( $atts ) {
+	ob_start();
+	require( dirname( __FILE__ ) . "/form-newsletter-mailchimp.php" );
+	$output = ob_get_contents();
+	ob_end_clean();
+	return $output;
+}
 
 
 //*** Tornar estas funções, helpers, ou obter direto do EventsManager mesmo
@@ -106,6 +115,7 @@ function formForNewsletter( $atts ) {
 // Shortcode to list events
 add_shortcode( 'list-events', 'listEvents' );
 function listEvents( $atts ) {
+    return null;
 	global $events;
 	global $title;
 	global $publish;
@@ -262,8 +272,12 @@ function publish_new_novo_evento_copy($status, $ckf7_key, $submitted_data){
     return 'draft';
 }
 
-//
+// STARTUPS - exibição da lista e detalhe
 
+/**
+ * Apresenta o tamanho do time da startup com ícones
+ * @return string
+ */
 function getTeamSize(){
     $team_size = get_field('team_size');
     $size = explode("-",$team_size);
@@ -280,23 +294,39 @@ function getTeamSize(){
     return $icons;
 }
 
+/**
+ * Apresenta o momento atual da startup
+ * @return string
+ */
 function getActualMoment(){
     $actual_moment = get_field('actual_moment');
     $actual_moment = substr($actual_moment,0, strpos($actual_moment,"("));
     return "<span>Momento atual: $actual_moment</span>";
 }
 
+/**
+ * Apresenta o foco da startup
+ * @return string
+ */
 function getTarget(){
     $target = get_field('target');
     $target = substr($target,0, strpos($target,"("));
     return "<span>Público alvo: $target</span>";
 }
 
+/**
+ * Apresenta a área de negócio da startup
+ * @return string
+ */
 function getBusinessArea(){
     $business_area = get_field('business_area');
     return "<ul><li>" . implode( '</li><li>', $business_area) . "</li></ul>";
 }
 
+/**
+ * Apresenta o momento de negócio da startup
+ * @return string
+ */
 function getBusinessModel(){
     $business_model = get_field('business_model');
     $business_model = substr($business_model,0, strpos($business_model,"("));
