@@ -18,10 +18,10 @@
             <div class="mc-field-group input-group newsletter-checkbox-area">
                 <strong>Quem é você? </strong>
                 <ol class="newsletter-checkbox-list">
-                    <li class="newsletter-checkbox-list-item"><label for="mce-group[2329]-2329-0">Empreendedor</label><input type="checkbox" value="2" name="group[2329][2]" id="mce-group[2329]-2329-0"></li>
-                    <li class="newsletter-checkbox-list-item"><label for="mce-group[2329]-2329-1">Estudante</label><input type="checkbox" value="1" name="group[2329][1]" id="mce-group[2329]-2329-1"></li>
-                    <li class="newsletter-checkbox-list-item"><label for="mce-group[2329]-2329-2">Organizador de eventos ou instituição</label><input type="checkbox" value="8" name="group[2329][8]" id="mce-group[2329]-2329-2"></li>
-                    <li class="newsletter-checkbox-list-item"><label for="mce-group[2329]-2329-3">Desenvolvedor ou interessado</label><input type="checkbox" value="16" name="group[2329][16]" id="mce-group[2329]-2329-3"></li>
+                    <li class="newsletter-checkbox-list-item"><label for="mce-group[2329]-2329-0"><input type="checkbox" value="2" name="group[2329][2]" id="mce-group[2329]-2329-0"> Empreendedor</label></li>
+                    <li class="newsletter-checkbox-list-item"><label for="mce-group[2329]-2329-1"><input type="checkbox" value="1" name="group[2329][1]" id="mce-group[2329]-2329-1"> Estudante</label></li>
+                    <li class="newsletter-checkbox-list-item"><label for="mce-group[2329]-2329-2"><input type="checkbox" value="8" name="group[2329][8]" id="mce-group[2329]-2329-2"> Organizador de eventos ou instituição</label></li>
+                    <li class="newsletter-checkbox-list-item"><label for="mce-group[2329]-2329-3"><input type="checkbox" value="16" name="group[2329][16]" id="mce-group[2329]-2329-3"> Desenvolvedor ou interessado</label></li>
                 </ol>
             </div>
             <div id="mce-responses" class="clear">
