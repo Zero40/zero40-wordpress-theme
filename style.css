@@ -238,6 +238,23 @@ select {
     width: 100%;
 }
 
+.newsletter-checkbox-area{
+    margin-top: 1em;
+}
+
+.newsletter-checkbox-list{
+    list-style-type: none;
+    padding: 0;
+}
+
+.newsletter-checkbox-list-item{
+    padding: 0 !important;
+}
+
+#newsletter-subscribe-form{
+    text-align: center;
+}
+
 .newsletter .em-newsletter-subscribe {
     max-width: 340px;
     margin: 0 auto;
