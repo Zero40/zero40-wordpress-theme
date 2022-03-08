@@ -298,37 +298,37 @@ function getTeamSize(){
  * Apresenta o momento atual da startup
  * @return string
  */
-function getActualMoment(){
+function getActualMoment($raw = false){
     $actual_moment = get_field('actual_moment');
     $actual_moment = substr($actual_moment,0, strpos($actual_moment,"("));
-    return "<span>Momento atual: $actual_moment</span>";
+    return $raw ? $actual_moment :  "<span>Momento atual: $actual_moment</span>";
 }
 
 /**
  * Apresenta o foco da startup
  * @return string
  */
-function getTarget(){
+function getTarget($raw = false){
     $target = get_field('target');
     $target = substr($target,0, strpos($target,"("));
-    return "<span>Público alvo: $target</span>";
+	return $raw ? $target : "<span>Público alvo: $target</span>";
 }
 
 /**
  * Apresenta a área de negócio da startup
  * @return string
  */
-function getBusinessArea(){
+function getBusinessArea($raw = false){
     $business_area = get_field('business_area');
-    return "<ul><li>" . implode( '</li><li>', $business_area) . "</li></ul>";
+    return $raw ? $business_area : "<ul><li>" . implode( '</li><li>', $business_area) . "</li></ul>";
 }
 
 /**
  * Apresenta o momento de negócio da startup
  * @return string
  */
-function getBusinessModel(){
+function getBusinessModel($raw = false){
     $business_model = get_field('business_model');
     $business_model = substr($business_model,0, strpos($business_model,"("));
-    return "<span>Modelo negócio: $business_model</span>";
+    return $raw ?  $business_model :  "<span>Modelo negócio: $business_model</span>";
 }
