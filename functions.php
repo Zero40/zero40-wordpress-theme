@@ -278,8 +278,8 @@ function publish_new_novo_evento_copy($status, $ckf7_key, $submitted_data){
  * Apresenta o tamanho do time da startup com ícones
  * @return string
  */
-function getTeamSize(){
-    $team_size = get_field('team_size');
+function getTeamSize($raw = false, $post_id = null){
+    $team_size = $post_id ? get_field('team_size', $post_id) : get_field('team_size');
     $size = explode("-",$team_size);
     $min = $size[0];
     $max = $size[1];
@@ -291,15 +291,15 @@ function getTeamSize(){
 
     $repeat = $team[$team_size];
     $icons = str_repeat("<i class=\"fa fa-user-o\" aria-hidden=\"true\" title=\"Equipe entre $min e $max pessoas, incluindo os sócios\"></i>", $repeat);
-    return $icons;
+    return $raw ? $team_size : $icons;
 }
 
 /**
  * Apresenta o momento atual da startup
  * @return string
  */
-function getActualMoment(){
-    $actual_moment = get_field('actual_moment');
+function getActualMoment($raw = false, $post_id = null){
+    $actual_moment = $post_id ? get_field('actual_moment', $post_id) : get_field('actual_moment');
     $actual_moment = substr($actual_moment,0, strpos($actual_moment,"("));
     return "<span>Momento atual: $actual_moment</span>";
 }
@@ -308,8 +308,8 @@ function getActualMoment(){
  * Apresenta o foco da startup
  * @return string
  */
-function getTarget(){
-    $target = get_field('target');
+function getTarget($raw = false, $post_id = null){
+    $target = $post_id ? get_field('target', $post_id) :get_field('target');
     $target = substr($target,0, strpos($target,"("));
     return "<span>Público alvo: $target</span>";
 }
@@ -318,17 +318,28 @@ function getTarget(){
  * Apresenta a área de negócio da startup
  * @return string
  */
-function getBusinessArea(){
-    $business_area = get_field('business_area');
-    return "<ul><li>" . implode( '</li><li>', $business_area) . "</li></ul>";
+function getBusinessArea($raw = false, $post_id = null){
+    $business_area = $post_id ? get_field('business_area', $post_id) : get_field('business_area') ;
+    return $raw ? $business_area : "<ul><li>" . implode( '</li><li>', $business_area) . "</li></ul>";
 }
 
 /**
  * Apresenta o momento de negócio da startup
  * @return string
  */
-function getBusinessModel(){
-    $business_model = get_field('business_model');
+function getBusinessModel($raw = false, $post_id = null){
+    $business_model = $post_id ? get_field('business_model', $post_id) : get_field('business_model') ;
     $business_model = substr($business_model,0, strpos($business_model,"("));
-    return "<span>Modelo negócio: $business_model</span>";
+    return $raw ?  $business_model :  "<span>Modelo negócio: $business_model</span>";
+}
+
+/**
+ * @return WP_Post
+ */
+
+function queryPostAcordingDay($post_type){
+	$startups = new WP_Query( array('post_type' => $post_type) );
+    $index = date('d') % sizeof($startups->posts);
+    $featured = $startups->posts[$index]; 
+	return $featured;
 }
