@@ -301,7 +301,7 @@ function getTeamSize($raw = false, $post_id = null){
 function getActualMoment($raw = false, $post_id = null){
     $actual_moment = $post_id ? get_field('actual_moment', $post_id) : get_field('actual_moment');
     $actual_moment = substr($actual_moment,0, strpos($actual_moment,"("));
-    return "<span>Momento atual: $actual_moment</span>";
+    return $raw ? $actual_moment :  "<span>Momento atual: $actual_moment</span>";
 }
 
 /**
@@ -311,7 +311,7 @@ function getActualMoment($raw = false, $post_id = null){
 function getTarget($raw = false, $post_id = null){
     $target = $post_id ? get_field('target', $post_id) :get_field('target');
     $target = substr($target,0, strpos($target,"("));
-    return "<span>Público alvo: $target</span>";
+	return $raw ? $target : "<span>Público alvo: $target</span>";
 }
 
 /**
