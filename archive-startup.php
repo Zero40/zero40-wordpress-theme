@@ -23,11 +23,13 @@
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" class="card">
                         <div class="post-image">
-                            <?php the_post_thumbnail('integral-post-thumbnails',array('class'=>'card-img-top ')); ?>
+                            <div>
+                                <?php the_post_thumbnail('integral-post-thumbnails',array('class'=>'card-img-top ')); ?>
+                            </div>
                         </div>
                         <div class=" card-body">
                             <h5 class="card-title h3 text-warning "><?php the_title(); ?></h5>
-                            <p class="card-text"> <?php echo wp_trim_words(get_the_excerpt(), 21, null) ; ?></p>
+                            <p class="card-text"> <?php echo wp_trim_words(get_the_excerpt(), 40, null) ;?></p>
                             <p>
                             <div><?='<span class="font-weight-bold team-size">Tamanho: </span>' .  getTeamSize() ?></div>
                             <div><?='<span class="font-weight-bold">Momento Atual: </span>' .  getActualMoment(true) ?></div>
@@ -40,7 +42,7 @@
                                     // Pega o total de áreas
                                     $areas_total = sizeof(getBusinessArea(true));
                                     echo '<span class="font-weight-bold">Áreas de Negócio: </span> ';
-                                    echo'<span class="badge-light"> ' . $areas ;
+                                    echo'<span> ' . $areas ;
                                     echo $areas_total > 5 ? ' <span class="badge"> +' .  ($areas_total - 5 ).  '</span>'  : '';
                                     ?>
                             </div>
@@ -57,9 +59,11 @@
                     'next_text' => __( 'Next', 'integral' ),
                     'screen_reader_text' => __( '&nbsp;', 'integral' ),
                 ) ); ?>
+
                 </div>
-            </div>
+            </div><!--content-->
         </div>
+
     </div>
 </div>
 
