@@ -53,6 +53,10 @@ select {
     width: 100%;
 }
 
+ol {
+    padding-inline-start: 0;
+}
+
 .hidden {
     visibility: hidden;
 }

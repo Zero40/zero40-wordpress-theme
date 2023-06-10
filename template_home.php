@@ -24,7 +24,7 @@ if ( $layout ) {
 	foreach ( $layout as $key => $value ) {
 		get_template_part( 'sections/' . $key );
 		if ( 'hero' === $key ) {
-			get_template_part( 'sections/events' );
+			get_template_part( 'sections/startups' );
 		}
 	}
 }
