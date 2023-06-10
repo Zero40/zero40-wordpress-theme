@@ -10,10 +10,7 @@
 <?php
 //$auth = is_authorized();
 //$events = EventsManager::getWillHappen();
-<<<<<<< HEAD
-=======
 get_template_part('sections/featured-startup' );
->>>>>>> bb38cc46e881314c7519b283c18870d4ad52816f
 ?>
 <section id="projects-grid" class="projects-grid lite no-padding-bottom">
     <div class="container">
