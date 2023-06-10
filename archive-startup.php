@@ -18,38 +18,42 @@
 
                 <hr/>
 
-                <div class="post-list flexbox row startups" id="startups">
+                <div id="startups">
 
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <article id="post-<?php the_ID(); ?>" class="card">
+                        <div class="post-image">
+                            <div>
+                                <?php the_post_thumbnail('integral-post-thumbnails',array('class'=>'card-img-top ')); ?>
+                            </div>
+                        </div>
+                        <div class=" card-body">
+                            <h5 class="card-title h3 text-warning "><?php the_title(); ?></h5>
+                            <p class="card-text"> <?php echo wp_trim_words(get_the_excerpt(), 40, null) ;?></p>
+                            <p>
+                            <div><?='<span class="font-weight-bold team-size">Tamanho: </span>' .  getTeamSize() ?></div>
+                            <div><?='<span class="font-weight-bold">Momento Atual: </span>' .  getActualMoment(true) ?></div>
+                            <div><?='<span class="font-weight-bold">Público Alvo: </span>' .  getTarget(true) ?></div>
+                            <div><?='<span class="font-weight-bold">Modelo de Negócio: </span>' .  getBusinessModel(true) ?></div>
+                            <div>
+                                <?php 
+                                    // Filtra apenas as 5 primeiras áreas 
+                                    $areas = implode(' • ', array_slice(getBusinessArea(true), -6) );
+                                    // Pega o total de áreas
+                                    $areas_total = sizeof(getBusinessArea(true));
+                                    echo '<span class="font-weight-bold">Áreas de Negócio: </span> ';
+                                    echo'<span> ' . $areas ;
+                                    echo $areas_total > 5 ? ' <span class="badge"> +' .  ($areas_total - 5 ).  '</span>'  : '';
+                                    ?>
+                            </div>
+                            </p>
+                            <a href="<?php the_permalink() ?>" class="btn btn-primary">Saiba Mais</a>
+                        </div>
+                    </article>
+                    <?php endwhile;?>
+                    <?php endif; ?>
 
-                <article id="post-<?php the_ID(); ?>" <?php post_class('post-item col'); ?>>
-
-                    <?php if(get_the_post_thumbnail()) { ?>
-                        <figure class="post-image flexbox">
-                            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                <?php the_post_thumbnail('integral-post-thumbnails',array('class'=>'img-responsive')); ?>
-                            </a>
-                        </figure>
-                    <?php } ?>
-
-                    <div class="row row-cols-1 startup-details">
-                        <div class="col"><?=getActualMoment() ?></div>
-                        <div class="col"><?=getTarget() ?></div>
-                        <div class="col"><?=getBusinessModel() ?></div>
-                        <div class="col"><?=getBusinessArea() ?></div>
-                        <div class="col"><?=getTeamSize() ?></div>
-                    </div>
-
-                    <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-
-                    <?php the_excerpt(); ?>
-
-                 </article> <!--post -->
-
-                 <?php endwhile;?>
-                 <?php endif; ?>
-
-                <?php the_posts_pagination( array(
+                    <?php the_posts_pagination( array(
                     'mid_size' => 2,
                     'prev_text' => __( 'Previous', 'integral' ),
                     'next_text' => __( 'Next', 'integral' ),

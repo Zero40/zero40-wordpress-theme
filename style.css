@@ -292,16 +292,34 @@ navbar-brand>img {
 	max-height: 60px;
 }
 
+#startups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+#startups .post-image{
+    height: 250px;
+    position: relative;
+}
 
 
-/* STARTUPS - List */
-#startups .post-list {width: 100%;}
-#startups .post-item {margin-bottom:60px; margin: 10px;}
-#startups .post-item .post-image {width: 100%; height: 140px; padding:0 60px; text-align: center; align-items: center;}
-#startups .post-item .post-image img {width: 100%; height: auto;}
-#startups .post-item h2 {font-size: 26px; margin: 0 0 10px;}
-#startups .post-item p {font-size: 14px;}
-#startups .fake-item {width: 30%; height: 0; overflow: hidden;}
+#startups .post-image img{
+    max-height: 100%;
+    padding: 2rem ;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%) ;
+    position: absolute;
+    object-fit: contain;
+}
+
+.team-size ~ i {
+    padding: 0 1.2px;
+    font-weight: 600;
+    color: #fcc500;
+}
+
 
 .startup-details { background-color: #fafafa; margin-bottom: 15px; padding: 5px; }
 .startup-details span {
@@ -323,10 +341,30 @@ navbar-brand>img {
 /* STARTUP - Single*/
 #startup {margin-bottom: 20px}
 #startup .page-header {align-items: center; margin:0;}
-#startup .post-image {width: 400px; float: right; padding: 30px; margin-bottom: 10px;}
-#startup .img-responsive {width: 100%; height: auto;}
+
+#startup .post-image{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+#startup .post-image img{
+    max-height: 100%;
+}
+
+#startup header{
+    width: 100%;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns:  2fr 1fr;
+}
+
+header > div{padding-right: 3rem;}
+
 #startup article {margin: 15px 0 10px}
-#startup h1 {color: #fcc500; margin: 0; font-size: 40px;}
+#startup h1 {color: #fcc500; margin: 0 0 25px; font-size: 40px;}
 #startup h2 {font-size: 18px; color: #fcc500; font-weight: bold; margin: 0 0 10px;}
 #startup p {font-size: 14px; margin: 0;}
 #startup p a {color: #000; border-bottom: 2px solid #fcc500; padding-bottom: 1px; text-decoration: none;}
@@ -346,11 +384,13 @@ navbar-brand>img {
 @media (max-width: 991px) {
     #startup .page-header {margin-top: 30px;}
 
+#startup header{ grid-template-columns: 1fr }
+#startup .post-image{ grid-row: 1; 
+    align-items: flex-start;        
+    justify-content:start;
 }
 
 @media (max-width: 767px) {
-    #startup .post-image {width: 100%; text-align: center; margin: 30px 0;}
-    #startup .img-responsive {width: 80%; display: inline-block;}
     #startup article  {margin-top: 30px;}
 }
 

@@ -10,6 +10,10 @@
 <?php
 //$auth = is_authorized();
 //$events = EventsManager::getWillHappen();
+<<<<<<< HEAD
+=======
+get_template_part('sections/featured-startup' );
+>>>>>>> bb38cc46e881314c7519b283c18870d4ad52816f
 ?>
 <section id="projects-grid" class="projects-grid lite no-padding-bottom">
     <div class="container">
@@ -21,7 +25,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3>As startups de Juiz de Fora estão ganhando o mundo!</h3>
-                <h4><b>16 Startups</b> Mapeadas</h4>
+                <h4><b><? echo wp_count_posts('startup')->publish; ?> Startups</b> Mapeadas</h4>
                 <h4>Principal área de atuação - <b>SAASS</b></h4>
                 <h4>Melhor momento atual - <b>operação</b></h4>
                 <p>Principal incubadora - <b>CRITT / UFJF</b></p>

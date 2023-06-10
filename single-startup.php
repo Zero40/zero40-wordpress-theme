@@ -12,20 +12,22 @@
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                        <header class="page-header flexbox">
-                            <h1><?php the_title(); ?></h1>
+                        <header>
+                     <div >
+                         <h1><?php the_title(); ?></h1>
+                         <?php
+                        $description = get_field('description');
+                        if ($description) echo $description;
+                        ?>
+                        </div>
 
                             <?php if (get_the_post_thumbnail()) { ?>
                                 <figure class="post-image">
-                                    <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?>
+                                    <img src="<?php echo the_post_thumbnail_url( 'large' ); ?> " alt="">
                                 </figure>
                             <?php } ?>
                         </header>
 
-                        <?php
-                        $description = get_field('description');
-                        if ($description) echo $description;
-                        ?>
 
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <div class="grid">
