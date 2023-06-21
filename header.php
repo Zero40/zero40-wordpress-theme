@@ -40,8 +40,8 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                <div class="navbar-header d-flex align-items-center w-100">
+                    <button type="button" class="navbar-toggle ml-auto" data-toggle="collapse" data-target="#navbar-ex-collapse">
                         <span class="sr-only"><?php _e('Toggle navigation', 'integral'); ?></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -74,14 +74,15 @@
                             'container'         => 'div',
                             'container_class'   => 'collapse navbar-collapse',
                             'container_id'      => 'navbar-ex-collapse',
-                            'menu_class'        => 'nav navbar-nav navbar-right navbar-expand-lg d-flex justify-content-end',
+                            'menu_class'        => 'nav navbar-nav navbar-right navbar-expand-md',
                             'echo'              => false,
                             'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                             'walker'            => new wp_bootstrap_navwalker()
                         )
                     );
 
-                    $navbar_theme = str_replace('menu-item ', 'ml-4 ml-lg-5 menu-item ', $navbar_theme);
+                    $navbar_theme = str_replace('menu-item ', 'ml-2 ml-md-4 ml-lg-5 menu-item ', $navbar_theme);
+                    $navbar_theme = str_replace('href=', 'class="text-nowrap" href=', $navbar_theme);
                     print_r( $navbar_theme);
 
                     ?>
