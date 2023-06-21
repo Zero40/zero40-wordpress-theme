@@ -38,18 +38,18 @@
 <body <?php body_class(); ?>>
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="container">
+        <div class="container-fluid px-0 px-lg-2">
+            <div class="container px-0 px-lg-2">
                 <div class="navbar-header d-flex align-items-center w-100">
                     <?php
                     $integral_logo = get_theme_mod('integral_logo');
 
                     if (isset($integral_logo) && $integral_logo != "") :
-                        echo '<h1 class="site-title"><a href="' . esc_url(home_url('/')) . '" class="navbar-brand">';
+                        echo '<h1 class="site-title"><a href="' . esc_url(home_url('/')) . '" class="navbar-brand ml-0 mr-2">';
                         echo '<img class="img-responsive" src="' . $integral_logo . '" alt="' . get_bloginfo('title') . '">';
                         echo '</a></h1>';
                     else :
-                        echo '<h1 class="site-title"><a href="' . esc_url(home_url('/')) . '" title="' . get_bloginfo('title') . '" class="navbar-brand">';
+                        echo '<h1 class="site-title"><a href="' . esc_url(home_url('/')) . '" title="' . get_bloginfo('title') . '" class="navbar-brand ml-0 mr-2">';
                         echo '' . get_bloginfo('title') . '';
                         echo '</a></h1>';
                     endif;
