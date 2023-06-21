@@ -41,13 +41,6 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="navbar-header d-flex align-items-center w-100">
-                    <button type="button" class="navbar-toggle ml-auto" data-toggle="collapse" data-target="#navbar-ex-collapse">
-                        <span class="sr-only"><?php _e('Toggle navigation', 'integral'); ?></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
                     <?php
                     $integral_logo = get_theme_mod('integral_logo');
 
@@ -61,6 +54,13 @@
                         echo '</a></h1>';
                     endif;
                     ?>
+                    <button type="button" class="navbar-toggle ml-auto" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                        <span class="sr-only"><?php _e('Toggle navigation', 'integral'); ?></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
                 </div>
 
                 <?php if (has_nav_menu('primary')) : ?>
@@ -83,7 +83,7 @@
 
                     $navbar_theme = str_replace('menu-item ', 'ml-2 ml-md-4 ml-lg-5 menu-item ', $navbar_theme);
                     $navbar_theme = str_replace('href=', 'class="text-nowrap" href=', $navbar_theme);
-                    print_r( $navbar_theme);
+                    print_r($navbar_theme);
 
                     ?>
 
