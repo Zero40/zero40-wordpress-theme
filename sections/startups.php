@@ -1,15 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tiagogouvea
- * Date: 08/11/18
- * Time: 07:53
- */
-?>
-
-<?php
-//$auth = is_authorized();
-//$events = EventsManager::getWillHappen();
 get_template_part('sections/featured-startup' );
 ?>
 <section id="projects-grid" class="projects-grid lite no-padding-bottom">
@@ -85,21 +74,3 @@ function truncate($text, $chars = 25) {
         color: red;
     }
 </style>
-
-<?php //if (!is_null($published) && $published === true) { ?>
-<!--    <p class="alert alert-success text-center aprovado"><b>Aprovação</b> de evento efetuada com sucesso</p>-->
-<?php //}
-//if (!is_null($published) && $published === false) { ?>
-<!--    <p class="alert alert-danger text-center aprovado"><b>Aprovação</b> não efetuada, houve algum erro!</p>-->
-<?php //} ?>
-<!---->
-<?php //if (!is_null($unpublished) && $unpublished === true) { ?>
-<!--    <p class="alert alert-success text-center reprovado"><b>Reprovação</b> de evento efetuado com sucesso</p>-->
-<?php //}
-//if (!is_null($unpublished) && $unpublished === false) { ?>
-<!--    <p class="alert alert-danger text-center reprovado"><b>Reprovação</b> não efetuada, houve algum erro!</p>-->
-<?php //} ?>
-
-
-<!--Para validar o evento é necessário saber a capacidade-->
-<!--Para validar o evento é necessário uma data para inscrições-->
