@@ -7,9 +7,10 @@
                 <h2 class="smalltitle">Agenda de eventos em Juiz de Fora<span></span></h2>
             </div>
         </div>
+
         <?php echo do_shortcode( '[events_list scope="future" limit=5 pagination=1]' ) ?>
 
-        <div class="row">
+        <div class="row" style="margin-top: 40px">
             <div class="col-md-12 text-center">
                 <a href="<?= get_site_url() . "/adicionar-evento/" ?>" class="btn btn-danger btn-lg btn-primary">
                     Incluir Evento

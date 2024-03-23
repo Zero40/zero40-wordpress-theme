@@ -11,11 +11,17 @@ get_template_part('sections/featured-startup' );
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3>As startups de Juiz de Fora estão ganhando o mundo!</h3>
+
+                <div style="margin: 20px">
                 <h4><b><? echo wp_count_posts('startup')->publish; ?> Startups</b> Mapeadas</h4>
                 <h4>Principal área de atuação - <b>SAASS</b></h4>
                 <h4>Melhor momento atual - <b>operação</b></h4>
-                <p>Incubadora de empresas - <b><a href="https://www2.ufjf.br/critt/">CRITT / UFJF</a></b></p>
-                <p>Hub de Inovação - <b><a href="https://www.nossomoinho.com/">Moinho</a></b></p>
+                </div>
+
+                <div style="margin: 20px">
+                    Incubadora de empresas - <b><a href="https://www2.ufjf.br/critt/">CRITT / UFJF</a></b><br/>
+                    Hub de Inovação - <b><a href="https://www.nossomoinho.com/">Moinho</a></b>
+                </div>
             </div>
         </div>
         <div class="row">
