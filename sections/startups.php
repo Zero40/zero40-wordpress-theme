@@ -33,7 +33,7 @@ get_template_part('sections/featured-startup' );
                 <a href="https://zero40.com.br/startups/" class="btn btn-danger btn-lg btn-primary">
                     Conhecer startups
                 </a><br/><br/>
-                <a href="https://zero40.com.br/mapeamentos-de-startups-de-juiz-de-fora/" class="btn btn-danger btn-primary">
+                <a href="https://zero40.com.br/incluir-startup/" class="btn btn-danger btn-primary">
                     Incluir Startup
                 </a>
             </div>
@@ -85,21 +85,3 @@ function truncate($text, $chars = 25) {
         color: red;
     }
 </style>
-
-<?php //if (!is_null($published) && $published === true) { ?>
-<!--    <p class="alert alert-success text-center aprovado"><b>Aprovação</b> de evento efetuada com sucesso</p>-->
-<?php //}
-//if (!is_null($published) && $published === false) { ?>
-<!--    <p class="alert alert-danger text-center aprovado"><b>Aprovação</b> não efetuada, houve algum erro!</p>-->
-<?php //} ?>
-<!---->
-<?php //if (!is_null($unpublished) && $unpublished === true) { ?>
-<!--    <p class="alert alert-success text-center reprovado"><b>Reprovação</b> de evento efetuado com sucesso</p>-->
-<?php //}
-//if (!is_null($unpublished) && $unpublished === false) { ?>
-<!--    <p class="alert alert-danger text-center reprovado"><b>Reprovação</b> não efetuada, houve algum erro!</p>-->
-<?php //} ?>
-
-
-<!--Para validar o evento é necessário saber a capacidade-->
-<!--Para validar o evento é necessário uma data para inscrições-->
