@@ -3,7 +3,7 @@
 
 # Tema Wordpress Zero40
 
-Tema do wordpress do site do [Zero40 - ecossistema empreendedor de JF](https://zero40.com.br/).   
+Tema do wordpress do site do [Zero40 - ecossistema de startups de JF](https://zero40.com.br/).   
 
 # Participe!
 

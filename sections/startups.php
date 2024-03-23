@@ -1,15 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tiagogouvea
- * Date: 08/11/18
- * Time: 07:53
- */
-?>
-
-<?php
-//$auth = is_authorized();
-//$events = EventsManager::getWillHappen();
 get_template_part('sections/featured-startup' );
 ?>
 <section id="projects-grid" class="projects-grid lite no-padding-bottom">
@@ -25,7 +14,8 @@ get_template_part('sections/featured-startup' );
                 <h4><b><? echo wp_count_posts('startup')->publish; ?> Startups</b> Mapeadas</h4>
                 <h4>Principal área de atuação - <b>SAASS</b></h4>
                 <h4>Melhor momento atual - <b>operação</b></h4>
-                <p>Principal incubadora - <b>CRITT / UFJF</b></p>
+                <p>Incubadora de empresas - <b><a href="https://www2.ufjf.br/critt/">CRITT / UFJF</a></b></p>
+                <p>Hub de Inovação - <b><a href="https://www.nossomoinho.com/">Moinho</a></b></p>
             </div>
         </div>
         <div class="row">
@@ -42,23 +32,6 @@ get_template_part('sections/featured-startup' );
 
 </section>
 
-
-<?php
-
-
-function truncate($text, $chars = 25) {
-    if (strlen( $text ) <= $chars) {
-        return $text;
-    }
-    $text = $text . " ";
-    $text = substr( $text, 0, $chars );
-    $text = substr( $text, 0, strrpos( $text, ' ' ) );
-    $text = $text . "...";
-
-    return $text;
-}
-
-?>
 <style>
     .actions-container {
         display: flex;
